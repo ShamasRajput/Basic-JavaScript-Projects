@@ -1,0 +1,128 @@
+<html>
+
+	<head>
+	
+		<title>Counter</title>
+		
+		<style type="text/css">
+		
+			#text{
+				text-align: center;
+				position:relative;
+				top: 150px;
+			}
+			
+			.buttons{
+				text-align: center;
+				position: relative;
+				top: 170px;
+			}
+			
+			.bttns{
+				  font-family: monospace;
+				  text-transform: uppercase;
+				  background: transparent;
+				  color: black;
+				  padding: 0.375rem 0.75rem;
+				  font-size: 0.875rem;
+				  border: 1px solid grey;
+				  cursor: pointer;
+				  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+				  margin: 0.5rem;
+				  border-radius: 10px;
+			
+			}
+			
+			.bttns:hover {
+				  color: white;
+				  background: grey;
+			}
+			#value{
+				font-size:6rem;
+				font-weight:bold;
+			}
+			
+			h1{
+				font-size:4rem;
+			}
+		
+		</style>
+		
+	</head>
+
+	<body>
+		
+		<div id="text">
+		
+			<h1>Counter</h1><span id="value">0</span>
+		
+		</div>
+		
+		<div class="buttons">
+			
+			<button class="bttns" id="dec">Decrease</button>
+			
+			<button class="bttns" id="res">Reset</button>
+			
+			<button class="bttns" id="inc">Increase</button>
+			
+		</div>
+		
+		<script type="text/javascript">
+		
+			function colorCheck(){
+			
+				if(count==0){
+				
+				document.getElementById("value").style.color="black";
+				
+				} else if (count>0){
+			
+					document.getElementById("value").style.color="green";
+			
+				}else if(count<0){
+			
+					document.getElementById("value").style.color="red";
+			
+				}
+		
+			}
+			
+			var count = 0;
+		
+			document.getElementById("dec").onclick = function(){
+				
+				count--;
+				
+				document.getElementById("value").innerHTML = count; 
+				
+				colorCheck();
+			
+			}
+			
+			document.getElementById("res").onclick = function(){
+				
+				count = 0;
+				
+				document.getElementById("value").innerHTML = count; 
+				
+				colorCheck();
+				
+			}
+			
+			document.getElementById("inc").onclick = function(){
+				
+				count++;
+				
+				document.getElementById("value").innerHTML = count;	
+				
+				colorCheck();
+				
+			}
+			
+		
+		</script>
+		
+	</body>
+
+</html>
